@@ -226,7 +226,7 @@ section.alt { background: var(--silver-pale); }
 .feature.reverse .feature-visual { order: 1; }
 
 .feature-visual {
-  background: linear-gradient(135deg, var(--silver-pale) 0%, var(--silver-light) 100%);
+  background: var(--silver-pale);
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -235,21 +235,12 @@ section.alt { background: var(--silver-pale); }
   position: relative;
   overflow: hidden;
 }
-.feature-visual::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 60%; height: 1px;
-  background: var(--accent);
-  transform: translate(-50%, -50%);
-  opacity: 0.4;
-}
-.feature-visual .glyph {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 5rem;
-  color: var(--navy);
-  opacity: 0.15;
-  font-style: italic;
+.feature-visual img,
+.feature-visual svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .feature-content h3 { font-size: 1.75rem; }
 
@@ -356,6 +347,28 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--accent);
 }
 textarea { resize: vertical; min-height: 140px; }
+
+.check-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.check-inline input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--accent);
+}
+.form-error {
+  background: #fbeeee;
+  color: #6a1f1f;
+  padding: 0.6rem 0.9rem;
+  border-left: 2px solid #b94a4a;
+  font-size: 0.9rem;
+}
 
 /* Page header (subpages) */
 .page-header {
